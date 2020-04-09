@@ -2,9 +2,16 @@
 import random
 
 ## Variaveis ##
-resposta = str(input("Deseja realizar uma rolagem? Responda Sim ou Não: "))
-(resposta)
-
-while resposta == 'sim':
+def sorteiaNumero():
     numeroSorteado = random.randint(0, 6)
-    print("O numero sorteado é {}" + numeroSorteado)
+    print("O numero sorteado é ", numeroSorteado)
+    pergunta()
+
+def pergunta():
+    respostaUsuario = str(input("Deseja realizar uma rolagem? Responda Sim ou Não: "))
+    while respostaUsuario == 'sim':
+        sorteiaNumero()
+    else:
+        pergunta()
+
+pergunta()
